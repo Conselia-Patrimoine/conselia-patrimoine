@@ -13,7 +13,7 @@ export default function AboutHero() {
     <section className="relative -mt-20 flex h-[60vh] min-h-[420px] items-end overflow-hidden">
       <ParallaxLayer>
         <Image
-          src="/images/hero.png"
+          src="/images/apropos.png"
           alt=""
           fill
           priority

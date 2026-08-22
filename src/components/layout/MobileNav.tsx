@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import { mainNav } from "@/content/navigation";
 
 /** Menu mobile (burger) — repliable, pour les écrans < md. */
@@ -13,13 +14,11 @@ export default function MobileNav() {
       <button
         type="button"
         aria-expanded={open}
-        aria-label="Ouvrir le menu"
+        aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
         onClick={() => setOpen((v) => !v)}
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-40"
+        className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-40 text-ink"
       >
-        {/* TODO: icône burger / fermeture (Lucide ou Material Symbols, cf. CLAUDE.md section 14) */}
-        <span className="sr-only">Menu</span>
-        ☰
+        {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>
 
       {open && (
@@ -30,7 +29,7 @@ export default function MobileNav() {
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-base font-medium text-ink"
+                  className="text-sm font-semibold uppercase tracking-wide text-ink"
                 >
                   {link.label}
                 </Link>

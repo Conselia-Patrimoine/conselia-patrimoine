@@ -1,7 +1,7 @@
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TeamMember from "@/components/sections/about/TeamMember";
-import QuoteBanner from "@/components/sections/about/QuoteBanner";
+import QuoteBanner from "@/components/sections/shared/QuoteBanner";
 import { teamMembers, sharedParagraph } from "@/content/qui-sommes-nous";
 
 // Page "Qui sommes-nous" — structure conforme à CLAUDE.md section 7.

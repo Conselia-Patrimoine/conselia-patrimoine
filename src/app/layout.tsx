@@ -35,7 +35,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col bg-paper text-ink font-sans">
         <Header />
-        <main className="flex-1">{children}</main>
+        {/* pt-20 compense le header fixe (h-20) ; le Hero de l'Accueil l'annule
+            avec -mt-20 pour s'étendre sous le header translucide. */}
+        <main className="flex-1 pt-20">{children}</main>
         <Footer />
       </body>
     </html>

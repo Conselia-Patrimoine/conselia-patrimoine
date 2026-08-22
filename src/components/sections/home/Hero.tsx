@@ -1,19 +1,47 @@
-import Section from "@/components/ui/Section";
+import Image from "next/image";
+import Container from "@/components/ui/Container";
+import ParallaxLayer from "@/components/ui/ParallaxLayer";
 import { hero } from "@/content/home";
 
-/** Hero Accueil : accroche + sous-accroche + bannière (2 associés, création 2016). */
+/**
+ * Hero Accueil : photo pleine largeur (légère dérive parallax) + titre superposé.
+ * Fichier : public/images/hero.avif. -mt-20 annule le pt-20 du <main>
+ * (cf. layout.tsx) pour s'étendre sous le header translucide fixe.
+ *
+ * TODO: à remplacer par une photo des deux associés si/quand disponible
+ * (cf. CLAUDE.md section 4) — cette image reste un bon filet de secours.
+ */
 export default function Hero() {
   return (
-    <Section tone="default" className="pt-20 sm:pt-28">
-      <div className="max-w-3xl">
-        <h1 className="text-4xl sm:text-5xl">{hero.headline}</h1>
-        <p className="mt-6 text-lg text-ink-soft">{hero.subheadline}</p>
-      </div>
+    <section className="relative -mt-20 flex min-h-screen items-end overflow-hidden">
+      <ParallaxLayer>
+        <Image
+          src="/images/hero.avif"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover grayscale"
+        />
+      </ParallaxLayer>
+      {/* Dégradé de marque, bien visible sur toute la photo (charcoal → or). */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(135deg, rgba(42,40,35,0.85) 0%, rgba(42,40,35,0.55) 35%, rgba(110,85,24,0.5) 70%, rgba(139,107,61,0.62) 100%)",
+        }}
+      />
 
-      {/* TODO: bannière visuelle mettant en avant les 2 associés + création 2016 (visuels à sourcer) */}
-      <div className="mt-12 flex h-64 items-center justify-center rounded-2xl border border-dashed border-stone-40 text-sm text-stone">
-        Bannière associés — visuel à intégrer
-      </div>
-    </Section>
+      <Container className="relative pb-20 pt-24 sm:pb-24">
+        <div className="flex max-w-xl flex-col gap-5">
+          <span className="text-sm font-semibold uppercase tracking-widest text-gold-2">
+            Cabinet indépendant · depuis 2016
+          </span>
+          <h1 className="text-4xl text-paper sm:text-5xl">{hero.headline}</h1>
+          <p className="text-lg text-paper/85">{hero.subheadline}</p>
+        </div>
+      </Container>
+    </section>
   );
 }

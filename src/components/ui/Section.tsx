@@ -10,9 +10,9 @@ type SectionProps = {
 };
 
 const toneClasses: Record<NonNullable<SectionProps["tone"]>, string> = {
-  default: "bg-blanc-casse text-gris-fonce",
-  muted: "bg-gris-clair text-gris-fonce",
-  dark: "bg-gris-fonce text-blanc-casse",
+  default: "bg-paper text-ink",
+  muted: "bg-mist text-ink",
+  dark: "bg-charcoal text-paper",
 };
 
 /** Bloc de section standard : gère le fond, l'espacement vertical et le conteneur. */

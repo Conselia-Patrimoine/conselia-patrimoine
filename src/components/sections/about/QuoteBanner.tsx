@@ -5,10 +5,10 @@ import { quoteBanner } from "@/content/qui-sommes-nous";
 export default function QuoteBanner() {
   return (
     <Section tone="dark" className="text-center">
-      <blockquote className="mx-auto max-w-2xl font-serif text-xl italic sm:text-2xl">
+      <blockquote className="mx-auto max-w-2xl font-display text-xl italic sm:text-2xl">
         &ldquo;{quoteBanner.text}&rdquo;
       </blockquote>
-      <p className="mt-6 text-sm text-dore">{quoteBanner.author}</p>
+      <p className="mt-6 text-sm text-gold-2">{quoteBanner.author}</p>
     </Section>
   );
 }

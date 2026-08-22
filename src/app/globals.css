@@ -1,44 +1,103 @@
 @import "tailwindcss";
 
 /*
- * Charte graphique Conselia Patrimoine — voir CLAUDE.md section 14.
- * Doré + gris exclusivement. Le doré reste un accent rare
- * (bordures, icônes, boutons), jamais un aplat dominant.
+ * Charte graphique Conselia Patrimoine — affinée (proposition validée).
+ * Neutres à biais chaud (jamais noir/blanc purs) + or en dégradé foil,
+ * toujours en accent, jamais en aplat de grande surface.
  */
 :root {
   /* Neutres */
-  --color-gris-fonce: #1f1f22; /* fond sombre / texte principal */
-  --color-gris-anthracite: #3a3a3d; /* secondaire */
-  --color-gris-clair: #f5f4f2; /* fonds de section */
-  --color-blanc-casse: #fafaf9;
+  --ink: #2a2823; /* texte principal — anthracite chaud */
+  --ink-soft: #4a473f; /* texte secondaire — solide (pas d'opacité : le mélange
+    oklab de Tailwind vire à l'orange sur fond clair, cf. commit) */
+  --charcoal: #423f37; /* fonds sombres (bandeaux, footer, CTA) */
+  --stone: #8d8576; /* gris moyen — texte secondaire / légendes */
+  --stone-40: #c9c3b4; /* gris clair — bordures, séparateurs */
+  --mist: #ede8dc; /* fonds de section clairs */
+  --paper: #fbf8f2; /* blanc cassé — fond principal */
 
-  /* Accent */
-  --color-dore: #c9a84c;
-  --color-dore-clair: #e2c982; /* dégradé / surbrillance */
+  /* Or, en dégradé foil */
+  --gold-1: #f6e7ac; /* reflet clair */
+  --gold-2: #e0be6b; /* or clair */
+  --gold-3: #c9a227; /* or — teinte de marque */
+  --gold-4: #93701f; /* or profond / bronze */
+  --gold-5: #6e5518; /* ombre profonde du dégradé */
 
-  /* Rôles sémantiques */
-  --background: var(--color-blanc-casse);
-  --foreground: var(--color-gris-fonce);
+  --gold-foil-gradient: linear-gradient(
+    135deg,
+    var(--gold-1) 0%,
+    var(--gold-2) 24%,
+    var(--gold-3) 52%,
+    var(--gold-4) 82%,
+    var(--gold-5) 100%
+  );
+
+  --background: var(--paper);
+  --foreground: var(--ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-gris-fonce: var(--color-gris-fonce);
-  --color-gris-anthracite: var(--color-gris-anthracite);
-  --color-gris-clair: var(--color-gris-clair);
-  --color-blanc-casse: var(--color-blanc-casse);
-  --color-dore: var(--color-dore);
-  --color-dore-clair: var(--color-dore-clair);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-charcoal: var(--charcoal);
+  --color-stone: var(--stone);
+  --color-stone-40: var(--stone-40);
+  --color-mist: var(--mist);
+  --color-paper: var(--paper);
+
+  --color-gold-1: var(--gold-1);
+  --color-gold-2: var(--gold-2);
+  --color-gold-3: var(--gold-3);
+  --color-gold-4: var(--gold-4);
+  --color-gold-5: var(--gold-5);
 
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  /* Fallback serif pour citations / accents éditoriaux (effet premium) */
-  --font-serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
 }
 
 body {
-  background: var(--color-blanc-casse);
-  color: var(--color-gris-fonce);
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--font-sans);
+}
+
+/* Titres en serif éditorial — cohérent sur tout le site sans surcharger chaque composant. */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Surfaces dorées en dégradé — jamais un utilitaire Tailwind à couleur unique. */
+.gold-foil {
+  background-image: var(--gold-foil-gradient);
+}
+
+.gold-foil-text {
+  background-image: var(--gold-foil-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* CTA doré : dégradé + léger déplacement au survol (cf. proposition validée). */
+.btn-gold {
+  background-image: var(--gold-foil-gradient);
+  background-size: 180% 180%;
+  background-position: 0% 50%;
+  transition: background-position 0.4s ease;
+}
+.btn-gold:hover {
+  background-position: 100% 50%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-gold {
+    transition: none;
+  }
 }

@@ -17,7 +17,7 @@ export default function QuiSommesNousPage() {
           ))}
         </div>
 
-        <p className="mt-16 max-w-2xl text-gris-anthracite">{sharedParagraph}</p>
+        <p className="mt-16 max-w-2xl text-ink-soft">{sharedParagraph}</p>
       </Section>
 
       <QuoteBanner />

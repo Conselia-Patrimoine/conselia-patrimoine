@@ -18,14 +18,14 @@ export default function ObjectiveBlock({
       }`}
     >
       {/* TODO: visuel d'illustration (cf. CLAUDE.md section 4) */}
-      <div className="aspect-video w-full rounded-2xl border border-dashed border-gris-anthracite/30" />
+      <div className="aspect-video w-full rounded-2xl border border-dashed border-stone-40" />
 
       <div>
-        <h3 className="text-xl font-semibold">{question}</h3>
-        <p className="mt-3 text-gris-anthracite">{answer}</p>
+        <h3 className="text-xl">{question}</h3>
+        <p className="mt-3 text-ink-soft">{answer}</p>
         <Link
           href="/contact"
-          className="mt-4 inline-block text-sm font-medium text-dore hover:underline"
+          className="mt-4 inline-block text-sm font-medium text-gold-4 hover:underline"
         >
           En parler avec nous →
         </Link>

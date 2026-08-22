@@ -7,19 +7,19 @@ export default function ContactInfo() {
   return (
     <div className="space-y-6">
       <div>
-        <p className="text-sm font-medium uppercase tracking-wide text-dore">
+        <p className="text-sm font-medium uppercase tracking-wide text-gold-4">
           Téléphone
         </p>
         <p className="mt-1">{phone}</p>
       </div>
       <div>
-        <p className="text-sm font-medium uppercase tracking-wide text-dore">
+        <p className="text-sm font-medium uppercase tracking-wide text-gold-4">
           E-mail
         </p>
         <p className="mt-1">{email}</p>
       </div>
       <div>
-        <p className="text-sm font-medium uppercase tracking-wide text-dore">
+        <p className="text-sm font-medium uppercase tracking-wide text-gold-4">
           Adresse
         </p>
         <address className="mt-1 not-italic">

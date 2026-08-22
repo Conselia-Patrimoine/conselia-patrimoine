@@ -15,7 +15,7 @@ export default function MobileNav() {
         aria-expanded={open}
         aria-label="Ouvrir le menu"
         onClick={() => setOpen((v) => !v)}
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-gris-clair"
+        className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-40"
       >
         {/* TODO: icône burger / fermeture (Lucide ou Material Symbols, cf. CLAUDE.md section 14) */}
         <span className="sr-only">Menu</span>
@@ -23,14 +23,14 @@ export default function MobileNav() {
       </button>
 
       {open && (
-        <nav className="absolute inset-x-0 top-20 border-b border-gris-clair bg-blanc-casse px-6 py-4">
+        <nav className="absolute inset-x-0 top-20 border-b border-stone-40 bg-paper px-6 py-4">
           <ul className="flex flex-col gap-4">
             {mainNav.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-base font-medium text-gris-fonce"
+                  className="text-base font-medium text-ink"
                 >
                   {link.label}
                 </Link>

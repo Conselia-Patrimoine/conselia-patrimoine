@@ -17,10 +17,10 @@ export default function ExpertiseGrid() {
           <li key={domain.title}>
             <Link
               href="/vos-objectifs"
-              className="flex h-full flex-col items-center gap-4 rounded-2xl border border-gris-clair p-8 text-center transition-colors hover:border-dore"
+              className="flex h-full flex-col items-center gap-4 rounded-2xl border border-stone-40 p-8 text-center transition-colors hover:border-gold-3"
             >
               {/* TODO: icône Material Symbols / Lucide (cf. CLAUDE.md section 14) */}
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gris-clair text-dore">
+              <span className="gold-foil flex h-12 w-12 items-center justify-center rounded-full text-paper">
                 •
               </span>
               <span className="font-medium">{domain.title}</span>

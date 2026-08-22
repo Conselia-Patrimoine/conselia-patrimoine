@@ -12,9 +12,9 @@ export default function Testimonials() {
         {testimonials.map((t, i) => (
           <li
             key={i}
-            className="rounded-2xl bg-blanc-casse p-8 shadow-sm ring-1 ring-gris-clair"
+            className="rounded-2xl bg-paper p-8 shadow-sm ring-1 ring-stone-40"
           >
-            <p className="font-serif text-lg italic text-gris-anthracite">
+            <p className="font-display text-lg italic text-ink">
               &ldquo;{t.quote}&rdquo;
             </p>
             <p className="mt-4 text-sm font-medium">{t.name}</p>

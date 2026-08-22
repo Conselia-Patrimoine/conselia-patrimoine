@@ -12,7 +12,7 @@ export default function PlanDeSitePage() {
       <ul className="mt-12 space-y-3">
         {allPages.map((link) => (
           <li key={link.href}>
-            <Link href={link.href} className="text-gris-fonce hover:text-dore">
+            <Link href={link.href} className="text-ink hover:text-gold-4">
               {link.label}
             </Link>
           </li>

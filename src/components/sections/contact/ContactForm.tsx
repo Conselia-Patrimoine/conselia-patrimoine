@@ -36,7 +36,7 @@ export default function ContactForm() {
   if (status === "success") {
     // TODO: message de confirmation définitif (cf. CLAUDE.md section 16)
     return (
-      <p className="rounded-2xl bg-gris-clair p-6 text-gris-fonce">
+      <p className="rounded-2xl bg-mist p-6 text-ink">
         Votre message a bien été envoyé. Nous vous répondrons rapidement.
       </p>
     );
@@ -57,14 +57,14 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
-          className="mt-1 w-full rounded-xl border border-gris-clair bg-blanc-casse p-3 text-sm focus:border-dore focus:outline-none"
+          className="mt-1 w-full rounded-xl border border-stone-40 bg-paper p-3 text-sm focus:border-gold-3 focus:outline-none"
         />
       </label>
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex items-center justify-center rounded-full bg-dore px-6 py-3 text-sm font-medium text-gris-fonce transition-colors hover:bg-dore-clair disabled:opacity-60"
+        className="btn-gold inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-ink disabled:opacity-60"
       >
         {status === "loading" ? "Envoi…" : "Envoyer"}
       </button>
@@ -96,7 +96,7 @@ function Field({
         type={type}
         name={name}
         required={required}
-        className="mt-1 w-full rounded-xl border border-gris-clair bg-blanc-casse p-3 text-sm focus:border-dore focus:outline-none"
+        className="mt-1 w-full rounded-xl border border-stone-40 bg-paper p-3 text-sm focus:border-gold-3 focus:outline-none"
       />
     </label>
   );

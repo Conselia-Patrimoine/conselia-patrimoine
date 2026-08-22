@@ -7,11 +7,9 @@ type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 };
 
 const variantClasses: Record<NonNullable<ButtonProps["variant"]>, string> = {
-  // Doré réservé aux CTA, en accent — jamais en aplat de grande surface.
-  primary:
-    "bg-dore text-gris-fonce hover:bg-dore-clair",
-  secondary:
-    "border border-gris-anthracite text-gris-fonce hover:border-dore hover:text-dore",
+  // Doré réservé aux CTA, en dégradé foil (cf. globals.css .btn-gold) — jamais en aplat plat.
+  primary: "btn-gold text-ink",
+  secondary: "border border-stone-40 text-ink hover:border-gold-3 hover:text-gold-4",
 };
 
 /** CTA unique et discret (cf. CLAUDE.md : jamais de conversion forcée). */

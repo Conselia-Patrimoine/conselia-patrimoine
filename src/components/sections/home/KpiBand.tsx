@@ -8,8 +8,8 @@ export default function KpiBand() {
       <dl className="grid grid-cols-1 gap-8 sm:grid-cols-3">
         {kpis.map((kpi, i) => (
           <div key={i} className="text-center sm:text-left">
-            <dt className="text-3xl font-semibold text-dore">{kpi.value}</dt>
-            <dd className="mt-1 text-sm text-gris-anthracite">{kpi.label}</dd>
+            <dt className="gold-foil-text text-3xl font-semibold">{kpi.value}</dt>
+            <dd className="mt-1 text-sm text-stone">{kpi.label}</dd>
           </div>
         ))}
       </dl>

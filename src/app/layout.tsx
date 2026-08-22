@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope, Fraunces } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/content/site";
@@ -8,6 +8,13 @@ import "./globals.css";
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
+});
+
+// Serif éditorial pour les titres, le logo et les citations (effet premium).
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 // TODO: affiner les métadonnées (titre/description par page via `export const metadata`
@@ -22,8 +29,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={`${manrope.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col bg-blanc-casse text-gris-fonce font-sans">
+    <html
+      lang="fr"
+      className={`${manrope.variable} ${fraunces.variable} h-full antialiased`}
+    >
+      <body className="flex min-h-full flex-col bg-paper text-ink font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

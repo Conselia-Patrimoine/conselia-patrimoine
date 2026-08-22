@@ -19,9 +19,9 @@ export default function CtaContact({
 }: CtaContactProps) {
   return (
     <Section tone={tone} className="text-center">
-      <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
+      <h2 className="text-2xl sm:text-3xl">{title}</h2>
       {description && (
-        <p className="mx-auto mt-4 max-w-xl text-blanc-casse/70">{description}</p>
+        <p className="mx-auto mt-4 max-w-xl text-paper/70">{description}</p>
       )}
       <Button href="/contact" className="mt-8">
         Nous contacter

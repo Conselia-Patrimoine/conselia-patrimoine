@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/*
+ * Charte graphique Conselia Patrimoine — voir CLAUDE.md section 14.
+ * Doré + gris exclusivement. Le doré reste un accent rare
+ * (bordures, icônes, boutons), jamais un aplat dominant.
+ */
+:root {
+  /* Neutres */
+  --color-gris-fonce: #1f1f22; /* fond sombre / texte principal */
+  --color-gris-anthracite: #3a3a3d; /* secondaire */
+  --color-gris-clair: #f5f4f2; /* fonds de section */
+  --color-blanc-casse: #fafaf9;
+
+  /* Accent */
+  --color-dore: #c9a84c;
+  --color-dore-clair: #e2c982; /* dégradé / surbrillance */
+
+  /* Rôles sémantiques */
+  --background: var(--color-blanc-casse);
+  --foreground: var(--color-gris-fonce);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-gris-fonce: var(--color-gris-fonce);
+  --color-gris-anthracite: var(--color-gris-anthracite);
+  --color-gris-clair: var(--color-gris-clair);
+  --color-blanc-casse: var(--color-blanc-casse);
+  --color-dore: var(--color-dore);
+  --color-dore-clair: var(--color-dore-clair);
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  /* Fallback serif pour citations / accents éditoriaux (effet premium) */
+  --font-serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+}
+
+body {
+  background: var(--color-blanc-casse);
+  color: var(--color-gris-fonce);
+  font-family: var(--font-sans);
+}

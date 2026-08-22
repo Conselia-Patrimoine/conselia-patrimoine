@@ -10,14 +10,9 @@ export default function VosObjectifsPage() {
       <ObjectivesHero />
 
       <Section>
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto flex max-w-3xl flex-col gap-6">
           {objectiveBlocks.map((block, i) => (
-            <ObjectiveBlock
-              key={i}
-              {...block}
-              index={i}
-              isLast={i === objectiveBlocks.length - 1}
-            />
+            <ObjectiveBlock key={i} {...block} index={i} />
           ))}
         </div>
       </Section>

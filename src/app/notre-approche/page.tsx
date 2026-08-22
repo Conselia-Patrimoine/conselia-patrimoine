@@ -1,19 +1,20 @@
 import Section from "@/components/ui/Section";
-import SectionHeading from "@/components/ui/SectionHeading";
+import ApproachHero from "@/components/sections/approach/ApproachHero";
 import ProcessSteps from "@/components/sections/approach/ProcessSteps";
-import { chapo } from "@/content/notre-approche";
 
 // Page "Notre approche" — structure conforme à CLAUDE.md section 9.
 export default function NotreApprochePage() {
   return (
-    <Section>
-      <SectionHeading title="Notre approche" description={chapo} />
+    <>
+      <ApproachHero />
 
-      <div className="mt-16">
-        <ProcessSteps />
-      </div>
+      <Section>
+        <div className="mx-auto max-w-2xl">
+          <ProcessSteps />
+        </div>
+      </Section>
 
       {/* TODO: décider si le bloc "Notre expertise" (Q/R) est repris ici (cf. content/notre-approche.ts) */}
-    </Section>
+    </>
   );
 }

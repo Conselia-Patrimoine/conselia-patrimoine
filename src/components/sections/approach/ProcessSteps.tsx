@@ -1,24 +1,35 @@
+import SlideInOnScroll from "@/components/ui/SlideInOnScroll";
 import { processSteps } from "@/content/notre-approche";
 
-/** Parcours en étapes numérotées avec connecteurs visuels (cf. CLAUDE.md section 9). */
+/**
+ * Parcours en 4 étapes numérotées, reliées par un filet vertical — même
+ * vocabulaire visuel que les blocs de "Vos objectifs" (cercle doré numéroté
+ * + connecteur), pour une cohérence entre les deux pages. Cf. CLAUDE.md
+ * section 9 : demande explicite de la cliente pour un rendu "en mode
+ * séquencé", pas un simple bloc de texte.
+ */
 export default function ProcessSteps() {
   return (
-    <ol className="grid grid-cols-1 gap-0 sm:grid-cols-4">
-      {processSteps.map((step, i) => (
-        <li key={step.number} className="relative flex flex-col items-start gap-4 px-4 py-6">
-          {/* Connecteur visuel entre les étapes */}
-          {i < processSteps.length - 1 && (
-            <span className="absolute right-0 top-9 hidden h-px w-full -translate-y-1/2 bg-stone-40 sm:block" />
-          )}
-          <span className="gold-foil relative flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold text-ink">
-            {step.number}
-          </span>
-          <div>
-            <h3 className="text-lg">{step.title}</h3>
-            <p className="mt-2 text-sm text-ink-soft">{step.description}</p>
-          </div>
-        </li>
-      ))}
-    </ol>
+    <div>
+      {processSteps.map((step, i) => {
+        const isLast = i === processSteps.length - 1;
+        return (
+          <SlideInOnScroll key={step.number} from={i % 2 === 0 ? "left" : "right"}>
+            <div className="flex gap-6">
+              <div className="flex flex-col items-center">
+                <span className="gold-foil flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-semibold text-ink">
+                  {String(step.number).padStart(2, "0")}
+                </span>
+                {!isLast && <span className="mt-2 w-px flex-1 bg-stone-40" />}
+              </div>
+              <div className="pb-12">
+                <h3 className="text-xl">{step.title}</h3>
+                <p className="mt-3 text-ink-soft">{step.description}</p>
+              </div>
+            </div>
+          </SlideInOnScroll>
+        );
+      })}
+    </div>
   );
 }

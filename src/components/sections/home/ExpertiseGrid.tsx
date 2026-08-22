@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
+import SlideInOnScroll from "@/components/ui/SlideInOnScroll";
+import { tileThemes } from "@/lib/tileThemes";
 import { expertiseDomains, type ExpertiseDomain } from "@/content/home";
 
 // Équivalents Lucide des icônes Material Symbols de la démo (cf. CLAUDE.md
@@ -23,22 +25,10 @@ const icons: Record<ExpertiseDomain["icon"], LucideIcon> = {
   health_and_safety: ShieldCheck,
 };
 
-// Patchwork de tons puisés dans la palette existante (jamais de couleur
-// hors charte) — alterné clair/foncé pour que ça se lise comme un damier,
-// pas une grille plate d'une seule teinte.
-const tileThemes = [
-  { bg: "bg-ink", text: "text-paper", icon: "text-gold-2" },
-  { bg: "bg-mist", text: "text-ink", icon: "text-gold-4" },
-  { bg: "bg-charcoal", text: "text-paper", icon: "text-gold-1" },
-  { bg: "bg-gold-1", text: "text-ink", icon: "text-charcoal" },
-  { bg: "bg-gold-5", text: "text-paper", icon: "text-gold-1" },
-  { bg: "bg-stone-40", text: "text-ink", icon: "text-gold-4" },
-] as const;
-
 /**
  * Domaines d'expertise — patchwork de tuiles colorées (nuances de la
- * charte), sans description (cf. CLAUDE.md 6.3). Chaque tuile renvoie vers
- * /vos-objectifs (pas de fiche produit dédiée).
+ * charte), avec une courte définition sous chaque titre. Chaque tuile
+ * renvoie vers /vos-objectifs (pas de fiche produit dédiée).
  */
 export default function ExpertiseGrid() {
   return (
@@ -51,13 +41,19 @@ export default function ExpertiseGrid() {
           const theme = tileThemes[i % tileThemes.length];
           return (
             <li key={domain.title}>
-              <Link
-                href="/vos-objectifs"
-                className={`flex aspect-[4/3] flex-col items-center justify-center gap-4 rounded-2xl p-8 text-center transition-transform hover:-translate-y-1 ${theme.bg} ${theme.text}`}
+              <SlideInOnScroll
+                from={i % 2 === 0 ? "left" : "right"}
+                delay={(i % 3) * 100}
               >
-                <Icon className={`h-8 w-8 ${theme.icon}`} strokeWidth={1.5} aria-hidden="true" />
-                <span className="font-medium">{domain.title}</span>
-              </Link>
+                <Link
+                  href="/vos-objectifs"
+                  className={`flex min-h-[220px] flex-col items-center justify-center gap-3 rounded-2xl p-8 text-center transition-transform hover:-translate-y-1 ${theme.bg} ${theme.text}`}
+                >
+                  <Icon className={`h-7 w-7 ${theme.icon}`} strokeWidth={1.5} aria-hidden="true" />
+                  <span className="font-medium">{domain.title}</span>
+                  <p className={`text-sm leading-snug ${theme.muted}`}>{domain.description}</p>
+                </Link>
+              </SlideInOnScroll>
             </li>
           );
         })}

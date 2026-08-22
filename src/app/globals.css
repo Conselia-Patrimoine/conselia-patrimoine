@@ -16,12 +16,12 @@
   --mist: #ede8dc; /* fonds de section clairs */
   --paper: #fbf8f2; /* blanc cassé — fond principal */
 
-  /* Or, en dégradé foil */
-  --gold-1: #f6e7ac; /* reflet clair */
-  --gold-2: #e0be6b; /* or clair */
-  --gold-3: #c9a227; /* or — teinte de marque */
-  --gold-4: #93701f; /* or profond / bronze */
-  --gold-5: #6e5518; /* ombre profonde du dégradé */
+  /* Or, en dégradé foil — teinte réchauffée (ambre/bronze), moins jaune */
+  --gold-1: #f0d8a0; /* reflet clair */
+  --gold-2: #d9a860; /* or clair */
+  --gold-3: #bd8a2e; /* or — teinte de marque */
+  --gold-4: #8a5f1e; /* or profond / bronze */
+  --gold-5: #6b4a16; /* ombre profonde du dégradé */
 
   --gold-foil-gradient: linear-gradient(
     135deg,
@@ -55,7 +55,7 @@
   --color-gold-5: var(--gold-5);
 
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
+  --font-display: var(--font-display-face), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
@@ -114,7 +114,8 @@ h3 {
   .btn-gold {
     transition: none;
   }
-  .reveal-on-scroll {
+  .slide-in-on-scroll,
+  .fade-in {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/home/Hero";
 import KpiBand from "@/components/sections/home/KpiBand";
 import ExpertiseGrid from "@/components/sections/home/ExpertiseGrid";
+import PhotoBanner from "@/components/sections/home/PhotoBanner";
 import Testimonials from "@/components/sections/home/Testimonials";
 import QuoteBanner from "@/components/sections/shared/QuoteBanner";
 import CtaContact from "@/components/sections/shared/CtaContact";
@@ -11,9 +12,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <KpiBand />
-      <QuoteBanner />
       <ExpertiseGrid />
+      <QuoteBanner />
+      <KpiBand />
+      <PhotoBanner />
       <Testimonials />
       <CtaContact title={ctaContact.title} />
     </>

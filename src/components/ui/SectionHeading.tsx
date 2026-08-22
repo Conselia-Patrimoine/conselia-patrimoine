@@ -21,7 +21,7 @@ export default function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl sm:text-4xl">{title}</h2>
+      <h2 className="text-3xl uppercase tracking-wide sm:text-4xl">{title}</h2>
       {description && (
         <p className="mt-4 text-base text-ink-soft">{description}</p>
       )}

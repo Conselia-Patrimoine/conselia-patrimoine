@@ -49,7 +49,7 @@ Navigation principale : Accueil / Qui sommes-nous / Vos objectifs / Notre approc
    - Bannière mettant en avant : les 2 associés, la création du cabinet en 2016.
 2. **KPI** (chiffres clés à définir avec la cliente : année de création 2016, nombre d'associés, éventuellement nombre de clients accompagnés ou zone d'intervention).
 3. **Domaines d'expertise**
-   - Reprendre la logique de la démo (cartes avec icônes), mais **sans description** sous chaque titre.
+   - Reprendre la logique de la démo (cartes avec icônes). Décision initiale "sans description" (section 6 d'origine) revenue en cours de projet : une courte définition sous chaque titre a finalement été ajoutée — phrases rédigées par Claude, à faire relire/valider par la cliente avant mise en ligne.
    - Chaque carte pointe en lien vers la page "Vos objectifs" plutôt que vers une fiche produit dédiée.
    - Intitulés à garder de la démo : Placements financiers, Défiscalisation, Immobilier, Solutions Entreprises, Transmission & Succession, Assurance vie.
 4. **Avis clients**
@@ -171,7 +171,7 @@ Note : le site IONOS actuel indique une adresse différente (chemin Véga, 31140
   - Gris clair (fonds de section) : `#F5F4F2`
   - Blanc cassé : `#FAFAF9`
   - Accent doré : `#C9A84C` (dégradé possible vers `#E2C982` pour les surbrillances)
-- Police : Manrope (Google Fonts), avec un fallback serif pour les citations et accents éditoriaux (effet "premium").
+- Police : Manrope (Google Fonts) en corps de texte. Titres/logo/citations d'abord prévus en serif (Fraunces) pour un effet "premium" — jugé trop austère en cours de projet, remplacé par Plus Jakarta Sans (sans-serif, plus moderne et rond, garde l'italique pour les citations).
 - Icônes : Material Symbols Outlined ou équivalent Lucide/Heroicons selon la stack retenue.
 - Univers visuel sobre, feutré, contrasté (gris/blanc cassé en dominante, doré en accent rare : bordures, icônes, boutons CTA, jamais en aplat dominant). Éviter tout ce qui rappelle une identité bancaire "corporate froid" : on cherche la sobriété haut de gamme, pas l'austérité.
 

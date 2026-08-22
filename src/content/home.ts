@@ -11,12 +11,14 @@ export type Kpi = {
 
 export type ExpertiseDomain = {
   title: string;
+  description: string;
   icon: "payments" | "receipt_long" | "apartment" | "business_center" | "family_history" | "health_and_safety";
 };
 
 export type Testimonial = {
   name: string;
   quote: string;
+  rating: number;
 };
 
 export const hero = {
@@ -38,33 +40,62 @@ export const kpis: Kpi[] = [
 export const expertiseSinceYear = 2013;
 
 // Intitulés + icônes fixés par la cliente (section 6.3, repris de la démo
-// validée) — pas de description sous chaque carte. Chaque carte pointe
-// vers /vos-objectifs (pas de fiche produit dédiée).
+// validée). Chaque carte pointe vers /vos-objectifs (pas de fiche produit
+// dédiée).
+//
+// ⚠️ Descriptions : CLAUDE.md section 6.3 précisait à l'origine "sans
+// description sous chaque titre" (décision actée avec la cliente). Ce choix
+// a été inversé en cours de route — phrases ci-dessous rédigées par mes
+// soins (aucune ne figure dans content.md), à faire relire/valider par
+// Marine avant mise en ligne, comme tout texte non explicitement fourni.
 export const expertiseDomains: ExpertiseDomain[] = [
-  { title: "Placements financiers", icon: "payments" },
-  { title: "Défiscalisation", icon: "receipt_long" },
-  { title: "Immobilier", icon: "apartment" },
-  { title: "Solutions Entreprises", icon: "business_center" },
-  { title: "Transmission & Succession", icon: "family_history" },
-  { title: "Assurance vie", icon: "health_and_safety" },
+  {
+    title: "Placements financiers",
+    description: "Construire une épargne adaptée à votre profil et à vos objectifs de vie.",
+    icon: "payments",
+  },
+  {
+    title: "Défiscalisation",
+    description: "Réduire votre pression fiscale par des dispositifs adaptés à votre situation.",
+    icon: "receipt_long",
+  },
+  {
+    title: "Immobilier",
+    description: "Investir dans la pierre, en direct ou via des solutions collectives.",
+    icon: "apartment",
+  },
+  {
+    title: "Solutions Entreprises",
+    description: "Accompagner les dirigeants dans la gestion de leur patrimoine professionnel.",
+    icon: "business_center",
+  },
+  {
+    title: "Transmission & Succession",
+    description: "Anticiper la transmission de votre patrimoine à vos proches.",
+    icon: "family_history",
+  },
+  {
+    title: "Assurance vie",
+    description: "Protéger vos proches et valoriser votre épargne sur le long terme.",
+    icon: "health_and_safety",
+  },
 ];
 
-// 3 témoignages en dur (section 6.4), repris de la démo validée par la cliente.
+// Avis Google réels et vérifiés (5 étoiles), transcrits tels quels — y
+// compris la coquille "patrinoime" du second avis, laissée volontairement
+// pour rester fidèle au texte authentique du client.
 export const testimonials: Testimonial[] = [
   {
-    name: "Jean-Pierre M.",
+    name: "Anne-Laure RdZ",
+    rating: 5,
     quote:
-      "Marine a su vulgariser des concepts complexes et m'a aidé à structurer mes placements pour ma retraite avec beaucoup de pédagogie.",
+      "Je connais Marine HENRY depuis des années maintenant car nos 2 professions sont complémentaires et j'apprécie grandement l'accompagnement qu'elle offre à ses clients. Elle est très pro, humaine, et sérieuse. je recommande l'ensemble de son cabinet qui est composé de personnes qui lui ressemblent.",
   },
   {
-    name: "Sophie L.",
+    name: "Thierry CARLES",
+    rating: 5,
     quote:
-      "Un conseil indépendant qui change tout. J'apprécie particulièrement la réactivité de Marine et la personnalisation de ses solutions.",
-  },
-  {
-    name: "Marc D.",
-    quote:
-      "Grâce au bilan patrimonial, nous avons pu optimiser notre fiscalité immobilière. Une expertise précieuse pour notre famille.",
+      "Marine nous a accompagné pour établir un diagnostic de notre patrinoime et estimer toutes les options pour anticiper l'avenir avec sérénité. Du sérieux et de la compétence, bravo !",
   },
 ];
 

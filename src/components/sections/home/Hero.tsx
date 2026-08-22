@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import ParallaxLayer from "@/components/ui/ParallaxLayer";
+import Button from "@/components/ui/Button";
 import { hero } from "@/content/home";
 
 /**
@@ -29,7 +30,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(135deg, rgba(42,40,35,0.85) 0%, rgba(42,40,35,0.55) 35%, rgba(110,85,24,0.5) 70%, rgba(139,107,61,0.62) 100%)",
+            "linear-gradient(135deg, rgba(42,40,35,0.85) 0%, rgba(42,40,35,0.55) 35%, rgba(107,74,22,0.5) 70%, rgba(138,95,30,0.62) 100%)",
         }}
       />
 
@@ -40,6 +41,9 @@ export default function Hero() {
           </span>
           <h1 className="text-4xl text-paper sm:text-5xl">{hero.headline}</h1>
           <p className="text-lg text-paper/85">{hero.subheadline}</p>
+          <Button href="/contact" className="mt-2 self-start">
+            Nous contacter
+          </Button>
         </div>
       </Container>
     </section>

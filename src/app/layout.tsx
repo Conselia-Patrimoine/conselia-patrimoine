@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Fraunces } from "next/font/google";
+import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/content/site";
@@ -10,9 +10,10 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
-// Serif éditorial pour les titres, le logo et les citations (effet premium).
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+// Sans-serif moderne pour les titres, le logo et les citations — plus
+// chaleureux/rond qu'un grotesque froid type Inter, mais sans empattements.
+const displayFont = Plus_Jakarta_Sans({
+  variable: "--font-display-face",
   subsets: ["latin"],
   style: ["normal", "italic"],
 });
@@ -31,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fr"
-      className={`${manrope.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${manrope.variable} ${displayFont.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-paper text-ink font-sans">
         <Header />

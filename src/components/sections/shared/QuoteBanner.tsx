@@ -1,4 +1,6 @@
 import Container from "@/components/ui/Container";
+import Feather from "@/components/ui/Feather";
+import FadeIn from "@/components/ui/FadeIn";
 import { quoteBanner } from "@/content/qui-sommes-nous";
 
 /**
@@ -14,10 +16,13 @@ export default function QuoteBanner() {
   return (
     <section className="gold-foil py-16 text-center sm:py-24">
       <Container>
-        <blockquote className="mx-auto max-w-2xl font-display text-xl italic text-ink sm:text-2xl">
-          &ldquo;{quoteBanner.text}&rdquo;
-        </blockquote>
-        <p className="mt-6 text-sm font-medium text-ink-soft">{quoteBanner.author}</p>
+        <FadeIn>
+          <Feather className="mx-auto mb-6 h-14 w-14" fill="ink" />
+          <blockquote className="mx-auto max-w-2xl font-display text-xl italic text-ink sm:text-2xl">
+            &ldquo;{quoteBanner.text}&rdquo;
+          </blockquote>
+          <p className="mt-6 text-sm font-medium text-ink-soft">{quoteBanner.author}</p>
+        </FadeIn>
       </Container>
     </section>
   );

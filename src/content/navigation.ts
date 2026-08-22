@@ -11,7 +11,7 @@ export type NavLink = {
 export const mainNav: NavLink[] = [
   { label: "Accueil", href: "/" },
   { label: "À propos", href: "/a-propos" },
-  { label: "Vos objectifs", href: "/vos-objectifs" },
+  { label: "Notre expertise", href: "/notre-expertise" },
   { label: "Notre approche", href: "/notre-approche" },
   { label: "Contact", href: "/contact" },
 ];

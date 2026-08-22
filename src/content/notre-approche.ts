@@ -40,5 +40,6 @@ export const processSteps: ProcessStep[] = [
 ];
 
 // À confirmer avec la cliente (cf. CLAUDE.md section 17) : le bloc "Notre expertise"
-// (Q/R de src/content/vos-objectifs.ts) doit-il être dupliqué ici, ou rester
-// uniquement sur /vos-objectifs pour éviter la redondance ?
+// (Q/R de src/content/notre-expertise.ts, page nommée "Vos objectifs" dans le
+// brief d'origine) doit-il être dupliqué ici, ou rester uniquement sur
+// /notre-expertise pour éviter la redondance ?

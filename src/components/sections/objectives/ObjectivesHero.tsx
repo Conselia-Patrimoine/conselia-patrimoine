@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import ParallaxLayer from "@/components/ui/ParallaxLayer";
-import { hero } from "@/content/vos-objectifs";
+import { hero } from "@/content/notre-expertise";
 
 /**
- * Hero de la page "Vos objectifs" — même traitement que les autres pages
- * secondaires (À propos) : photo en niveaux de gris + dégradé de marque +
- * parallax, hauteur réduite (page secondaire, pas 100vh).
+ * Hero de la page "Notre expertise" (ex-"Vos objectifs") — même traitement
+ * que les autres pages secondaires (À propos) : photo en niveaux de gris +
+ * dégradé de marque + parallax, hauteur réduite (page secondaire, pas 100vh).
  */
 export default function ObjectivesHero() {
   return (

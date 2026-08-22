@@ -1,7 +1,8 @@
 /**
- * Contenu de la page "Vos objectifs" — structure conforme à CLAUDE.md
- * section 8. 7 blocs question/réponse, texte validé par la cliente
- * (content.md / CLAUDE.md).
+ * Contenu de la page "Notre expertise" (nommée "Vos objectifs" dans le
+ * brief d'origine, renommée en cours de projet) — structure conforme à
+ * CLAUDE.md section 8. 7 blocs question/réponse, texte validé par la
+ * cliente (content.md / CLAUDE.md).
  *
  * image : mélange de photos fournies et de visuels temporaires libres de
  * droit — à faire valider/remplacer par la cliente, cf. CLAUDE.md section 4.
@@ -15,7 +16,7 @@ export type ObjectiveBlock = {
 
 // Titre du bloc Q/R dans content.md, repris ici pour le hero.
 export const hero = {
-  headline: "Vos objectifs",
+  headline: "Notre expertise",
   subheadline:
     "Des questions que vous vous posez, des réponses que nous construisons avec vous.",
 };

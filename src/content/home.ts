@@ -40,7 +40,7 @@ export const kpis: Kpi[] = [
 export const expertiseSinceYear = 2013;
 
 // Intitulés + icônes fixés par la cliente (section 6.3, repris de la démo
-// validée). Chaque carte pointe vers /vos-objectifs (pas de fiche produit
+// validée). Chaque carte pointe vers /notre-expertise (pas de fiche produit
 // dédiée).
 //
 // ⚠️ Descriptions : CLAUDE.md section 6.3 précisait à l'origine "sans

@@ -3,7 +3,7 @@ import { processSteps } from "@/content/notre-approche";
 
 /**
  * Parcours en 4 étapes numérotées, reliées par un filet vertical — même
- * vocabulaire visuel que les blocs de "Vos objectifs" (cercle doré numéroté
+ * vocabulaire visuel que les blocs de "Notre expertise" (cercle doré numéroté
  * + connecteur), pour une cohérence entre les deux pages. Cf. CLAUDE.md
  * section 9 : demande explicite de la cliente pour un rendu "en mode
  * séquencé", pas un simple bloc de texte.

@@ -5,7 +5,7 @@ import { chapo } from "@/content/notre-approche";
 
 /**
  * Hero de la page "Notre approche" — même traitement que les autres pages
- * secondaires (À propos, Vos objectifs) : photo en niveaux de gris + dégradé
+ * secondaires (À propos, Notre expertise) : photo en niveaux de gris + dégradé
  * de marque + parallax, hauteur réduite (page secondaire, pas 100vh).
  *
  * Réutilise la photo du hero Accueil (signature d'un document) : aucun

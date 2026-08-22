@@ -1,10 +1,11 @@
 import Section from "@/components/ui/Section";
 import ObjectivesHero from "@/components/sections/objectives/ObjectivesHero";
 import ObjectiveBlock from "@/components/sections/objectives/ObjectiveBlock";
-import { objectiveBlocks } from "@/content/vos-objectifs";
+import { objectiveBlocks } from "@/content/notre-expertise";
 
-// Page "Vos objectifs" — structure conforme à CLAUDE.md section 8.
-export default function VosObjectifsPage() {
+// Page "Notre expertise" (nommée "Vos objectifs" dans le brief d'origine,
+// renommée en cours de projet) — structure conforme à CLAUDE.md section 8.
+export default function NotreExpertisePage() {
   return (
     <>
       <ObjectivesHero />

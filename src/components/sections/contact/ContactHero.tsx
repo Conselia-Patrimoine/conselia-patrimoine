@@ -4,7 +4,7 @@ import ParallaxLayer from "@/components/ui/ParallaxLayer";
 
 /**
  * Hero de la page Contact — même traitement que les autres pages secondaires
- * (À propos, Vos objectifs, Notre approche) : photo en niveaux de gris +
+ * (À propos, Notre expertise, Notre approche) : photo en niveaux de gris +
  * dégradé de marque + parallax, hauteur réduite (page secondaire, pas 100vh).
  * Fichier : public/images/contact.jpg (plume + courrier — écho à la plume
  * du logo, cf. CLAUDE.md section 3/7).

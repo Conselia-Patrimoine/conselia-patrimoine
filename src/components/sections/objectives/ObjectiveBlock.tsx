@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Feather from "@/components/ui/Feather";
 import SlideInOnScroll from "@/components/ui/SlideInOnScroll";
-import type { ObjectiveBlock as ObjectiveBlockType } from "@/content/vos-objectifs";
+import type { ObjectiveBlock as ObjectiveBlockType } from "@/content/notre-expertise";
 
 type ObjectiveBlockProps = ObjectiveBlockType & {
   index: number;

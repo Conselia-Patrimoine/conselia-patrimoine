@@ -28,7 +28,7 @@ const icons: Record<ExpertiseDomain["icon"], LucideIcon> = {
 /**
  * Domaines d'expertise — patchwork de tuiles colorées (nuances de la
  * charte), avec une courte définition sous chaque titre. Chaque tuile
- * renvoie vers /vos-objectifs (pas de fiche produit dédiée).
+ * renvoie vers /notre-expertise (pas de fiche produit dédiée).
  */
 export default function ExpertiseGrid() {
   return (
@@ -46,7 +46,7 @@ export default function ExpertiseGrid() {
                 delay={(i % 3) * 100}
               >
                 <Link
-                  href="/vos-objectifs"
+                  href="/notre-expertise"
                   className={`flex min-h-[220px] flex-col items-center justify-center gap-3 rounded-2xl p-8 text-center transition-transform hover:-translate-y-1 ${theme.bg} ${theme.text}`}
                 >
                   <Icon className={`h-7 w-7 ${theme.icon}`} strokeWidth={1.5} aria-hidden="true" />

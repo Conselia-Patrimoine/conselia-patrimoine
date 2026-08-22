@@ -1,7 +1,7 @@
 import Container from "@/components/ui/Container";
 import Feather from "@/components/ui/Feather";
 import FadeIn from "@/components/ui/FadeIn";
-import { quoteBanner } from "@/content/qui-sommes-nous";
+import { quoteBanner } from "@/content/a-propos";
 
 /**
  * Bandeau citation plein fond (plume du logo) — cf. CLAUDE.md section 7.

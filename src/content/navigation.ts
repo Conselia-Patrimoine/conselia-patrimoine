@@ -10,7 +10,7 @@ export type NavLink = {
 // Navigation principale (header)
 export const mainNav: NavLink[] = [
   { label: "Accueil", href: "/" },
-  { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
+  { label: "À propos", href: "/a-propos" },
   { label: "Vos objectifs", href: "/vos-objectifs" },
   { label: "Notre approche", href: "/notre-approche" },
   { label: "Contact", href: "/contact" },

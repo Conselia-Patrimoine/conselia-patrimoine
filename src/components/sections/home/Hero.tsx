@@ -6,7 +6,7 @@ import { hero } from "@/content/home";
 
 /**
  * Hero Accueil : photo pleine largeur (légère dérive parallax) + titre superposé.
- * Fichier : public/images/hero.avif. -mt-20 annule le pt-20 du <main>
+ * Fichier : public/images/hero.png. -mt-20 annule le pt-20 du <main>
  * (cf. layout.tsx) pour s'étendre sous le header translucide fixe.
  *
  * TODO: à remplacer par une photo des deux associés si/quand disponible
@@ -17,7 +17,7 @@ export default function Hero() {
     <section className="relative -mt-20 flex min-h-screen items-end overflow-hidden">
       <ParallaxLayer>
         <Image
-          src="/images/hero.avif"
+          src="/images/hero.png"
           alt=""
           fill
           priority

@@ -1,31 +1,31 @@
-import Section from "@/components/ui/Section";
-import Button from "@/components/ui/Button";
+import Link from "next/link";
+import Container from "@/components/ui/Container";
 
 type CtaContactProps = {
   title?: string;
   description?: string;
-  tone?: "default" | "muted" | "dark";
 };
 
 /**
  * Call-to-action unique vers /contact — formulation douce, jamais de prise
- * de rendez-vous en ligne (cf. CLAUDE.md objectif n°2). Réutilisé en fin
- * d'Accueil, et en lien discret sur "Vos objectifs".
+ * de rendez-vous en ligne (cf. CLAUDE.md objectif n°2). Fond doré en
+ * dégradé (gold-foil) — jamais un aplat uni, cf. charte graphique section 14.
  */
-export default function CtaContact({
-  title = "TODO",
-  description,
-  tone = "dark",
-}: CtaContactProps) {
+export default function CtaContact({ title = "TODO", description }: CtaContactProps) {
   return (
-    <Section tone={tone} className="text-center">
-      <h2 className="text-2xl sm:text-3xl">{title}</h2>
-      {description && (
-        <p className="mx-auto mt-4 max-w-xl text-paper/70">{description}</p>
-      )}
-      <Button href="/contact" className="mt-8">
-        Nous contacter
-      </Button>
-    </Section>
+    <section className="gold-foil py-16 text-center sm:py-24">
+      <Container>
+        <h2 className="text-2xl text-ink sm:text-3xl">{title}</h2>
+        {description && (
+          <p className="mx-auto mt-4 max-w-xl text-ink-soft">{description}</p>
+        )}
+        <Link
+          href="/contact"
+          className="mt-8 inline-flex items-center justify-center rounded-full bg-paper px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-charcoal hover:text-paper"
+        >
+          Nous contacter
+        </Link>
+      </Container>
+    </section>
   );
 }

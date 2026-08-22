@@ -1,12 +1,19 @@
 /**
  * Contenu de la page "Vos objectifs" — structure conforme à CLAUDE.md
  * section 8. 7 blocs question/réponse, texte validé par la cliente
- * (content.md / CLAUDE.md), alternant avec un visuel.
+ * (content.md / CLAUDE.md).
  */
 
 export type ObjectiveBlock = {
   question: string;
   answer: string;
+};
+
+// Titre du bloc Q/R dans content.md, repris ici pour le hero.
+export const hero = {
+  headline: "Vos objectifs",
+  subheadline:
+    "Des questions que vous vous posez, des réponses que nous construisons avec vous.",
 };
 
 export const objectiveBlocks: ObjectiveBlock[] = [

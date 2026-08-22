@@ -22,15 +22,19 @@ export default function Testimonials() {
 
       <ul className={`mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-6 ${gridCols}`}>
         {testimonials.map((t, i) => (
-          <li key={i}>
-            <SlideInOnScroll from={i % 2 === 0 ? "left" : "right"} delay={(i % 3) * 100}>
-              <div className="rounded-2xl bg-paper p-8 shadow-sm ring-1 ring-stone-40">
+          <li key={i} className="h-full">
+            <SlideInOnScroll
+              from={i % 2 === 0 ? "left" : "right"}
+              delay={(i % 3) * 100}
+              className="h-full"
+            >
+              <div className="flex h-full flex-col rounded-2xl bg-paper p-8 shadow-sm ring-1 ring-stone-40">
                 <div className="flex gap-0.5" aria-label={`${t.rating} étoiles sur 5`}>
                   {Array.from({ length: t.rating }).map((_, star) => (
                     <Star key={star} className="h-4 w-4 fill-gold-3 text-gold-3" />
                   ))}
                 </div>
-                <p className="mt-4 font-display text-lg italic text-ink">
+                <p className="mt-4 flex-1 font-display text-lg italic text-ink">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <p className="mt-4 text-sm font-medium">{t.name}</p>

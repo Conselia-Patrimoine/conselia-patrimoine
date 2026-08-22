@@ -1,58 +1,36 @@
 import Image from "next/image";
+import Feather from "@/components/ui/Feather";
 import SlideInOnScroll from "@/components/ui/SlideInOnScroll";
 import type { TeamMember as TeamMemberType } from "@/content/a-propos";
 
 type TeamMemberProps = TeamMemberType & {
-  /** Alterne le portrait gauche/droite selon la parité, comme sur l'Accueil. */
+  /** Sens d'arrivée au scroll — sans effet sur la mise en page (grille symétrique). */
   reversed?: boolean;
 };
 
-/**
- * Portrait + parcours d'un associé.
- *
- * Le sens de l'alternance change à la fois l'ordre des enfants ET le sens
- * du gabarit de colonnes (220px_1fr / 1fr_220px) : réordonner seulement via
- * CSS `order` ne suffit pas — en CSS Grid, `order` déplace aussi l'élément
- * vers l'autre piste lors du placement automatique, donc la photo hériterait
- * de la largeur "1fr" au lieu de rester à 220px.
- */
-export default function TeamMember({ firstName, bio, photo, reversed = false }: TeamMemberProps) {
-  const portrait = photo ? (
-    <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl ring-1 ring-stone-40">
-      <Image src={photo} alt={firstName} fill sizes="220px" className="object-cover" />
-    </div>
-  ) : (
-    // TODO: portrait à recevoir (cf. CLAUDE.md section 4)
-    <div className="flex aspect-[3/4] w-full items-center justify-center rounded-2xl border border-dashed border-stone-40 text-center text-xs text-stone">
-      Portrait à venir
-    </div>
-  );
-
-  const details = (
-    <div>
-      <h3 className="text-xl">{firstName}</h3>
-      <p className="mt-3 text-ink-soft">{bio}</p>
-    </div>
-  );
-
+/** Carte associé : photo, rôle, parcours. */
+export default function TeamMember({ firstName, role, bio, photo, reversed = false }: TeamMemberProps) {
   return (
-    <SlideInOnScroll from={reversed ? "right" : "left"}>
-      <div
-        className={`grid grid-cols-1 items-start gap-8 ${
-          reversed ? "sm:grid-cols-[1fr_220px]" : "sm:grid-cols-[220px_1fr]"
-        }`}
-      >
-        {reversed ? (
-          <>
-            {details}
-            {portrait}
-          </>
+    <SlideInOnScroll from={reversed ? "right" : "left"} className="h-full">
+      <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-paper ring-1 ring-stone-40 shadow-sm">
+        {photo ? (
+          <div className="relative aspect-[4/5] w-full">
+            <Image src={photo} alt={firstName} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
+          </div>
         ) : (
-          <>
-            {portrait}
-            {details}
-          </>
+          // TODO: portrait à recevoir (cf. CLAUDE.md section 4)
+          <div className="flex aspect-[4/5] w-full flex-col items-center justify-center gap-3 bg-mist">
+            <Feather className="h-9 w-9 opacity-70" />
+            <span className="text-xs text-stone">Portrait à venir</span>
+          </div>
         )}
+        <div className="flex flex-1 flex-col gap-2 p-6">
+          <div>
+            <h3 className="text-xl">{firstName}</h3>
+            <p className="text-xs font-semibold uppercase tracking-wide text-gold-4">{role}</p>
+          </div>
+          <p className="text-ink-soft">{bio}</p>
+        </div>
       </div>
     </SlideInOnScroll>
   );

@@ -32,9 +32,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fr"
-      className={`${manrope.variable} ${displayFont.variable} h-full antialiased`}
+      className={`${manrope.variable} ${displayFont.variable} h-full overflow-x-hidden antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-paper text-ink font-sans">
+      <body className="flex min-h-full flex-col overflow-x-hidden bg-paper text-ink font-sans">
         <Header />
         {/* pt-20 compense le header fixe (h-20) ; le Hero de l'Accueil l'annule
             avec -mt-20 pour s'étendre sous le header translucide. */}

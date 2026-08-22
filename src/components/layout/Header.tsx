@@ -22,12 +22,12 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-6 md:flex">
           {mainNav.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs font-semibold uppercase tracking-wide text-ink-soft transition-colors hover:text-gold-4"
+              className="whitespace-nowrap text-xs font-semibold uppercase tracking-wide text-ink-soft transition-colors hover:text-gold-4"
             >
               {link.label}
             </Link>

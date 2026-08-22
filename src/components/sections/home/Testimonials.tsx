@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
+import SlideInOnScroll from "@/components/ui/SlideInOnScroll";
 import { testimonials } from "@/content/home";
 
 // Toutes les classes possibles doivent apparaître littéralement pour que
@@ -21,20 +22,21 @@ export default function Testimonials() {
 
       <ul className={`mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-6 ${gridCols}`}>
         {testimonials.map((t, i) => (
-          <li
-            key={i}
-            className="rounded-2xl bg-paper p-8 shadow-sm ring-1 ring-stone-40"
-          >
-            <div className="flex gap-0.5" aria-label={`${t.rating} étoiles sur 5`}>
-              {Array.from({ length: t.rating }).map((_, star) => (
-                <Star key={star} className="h-4 w-4 fill-gold-3 text-gold-3" />
-              ))}
-            </div>
-            <p className="mt-4 font-display text-lg italic text-ink">
-              &ldquo;{t.quote}&rdquo;
-            </p>
-            <p className="mt-4 text-sm font-medium">{t.name}</p>
-            <p className="text-xs text-stone">Avis Google</p>
+          <li key={i}>
+            <SlideInOnScroll from={i % 2 === 0 ? "left" : "right"} delay={(i % 3) * 100}>
+              <div className="rounded-2xl bg-paper p-8 shadow-sm ring-1 ring-stone-40">
+                <div className="flex gap-0.5" aria-label={`${t.rating} étoiles sur 5`}>
+                  {Array.from({ length: t.rating }).map((_, star) => (
+                    <Star key={star} className="h-4 w-4 fill-gold-3 text-gold-3" />
+                  ))}
+                </div>
+                <p className="mt-4 font-display text-lg italic text-ink">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <p className="mt-4 text-sm font-medium">{t.name}</p>
+                <p className="text-xs text-stone">Avis Google</p>
+              </div>
+            </SlideInOnScroll>
           </li>
         ))}
       </ul>

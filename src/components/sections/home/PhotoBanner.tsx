@@ -17,11 +17,12 @@ export default function PhotoBanner() {
           className="object-cover"
         />
       </ParallaxLayer>
+      {/* Même dégradé de marque que le hero, pour une cohérence visuelle entre les deux photos. */}
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(135deg, rgba(42,40,35,0.35) 0%, rgba(42,40,35,0.1) 45%, rgba(107,74,22,0.3) 100%)",
+            "linear-gradient(135deg, rgba(42,40,35,0.85) 0%, rgba(42,40,35,0.55) 35%, rgba(107,74,22,0.5) 70%, rgba(138,95,30,0.62) 100%)",
         }}
       />
     </section>

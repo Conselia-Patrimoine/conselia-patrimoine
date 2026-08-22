@@ -17,7 +17,7 @@ export default function HomePage() {
       <KpiBand />
       <PhotoBanner />
       <Testimonials />
-      <CtaContact title={ctaContact.title} />
+      <CtaContact title={ctaContact.title} description={ctaContact.description} />
     </>
   );
 }

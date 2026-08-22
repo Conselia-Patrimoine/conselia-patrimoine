@@ -99,7 +99,9 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-// CTA final (section 6.5), repris de la démo validée.
+// CTA final (section 6.5) : titre repris de la démo validée. Sous-titre
+// rédigé par mes soins (absent de content.md), à faire valider par la cliente.
 export const ctaContact = {
   title: "Prenons le temps d'en parler",
+  description: "Pour comprendre votre situation et voir comment nous pouvons vous accompagner.",
 };

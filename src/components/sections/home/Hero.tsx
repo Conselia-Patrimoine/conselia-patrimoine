@@ -39,7 +39,7 @@ export default function Hero() {
           <span className="text-sm font-semibold uppercase tracking-widest text-gold-2">
             Cabinet indépendant · depuis 2016
           </span>
-          <h1 className="text-4xl text-paper sm:text-5xl">{hero.headline}</h1>
+          <h1 className="text-3xl text-paper sm:text-4xl">{hero.headline}</h1>
           <p className="text-lg text-paper/85">{hero.subheadline}</p>
           <Button href="/contact" className="mt-2 self-start">
             Nous contacter

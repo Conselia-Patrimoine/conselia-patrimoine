@@ -21,7 +21,7 @@ export default function CtaContact({ title = "TODO", description }: CtaContactPr
         )}
         <Link
           href="/contact"
-          className="mt-8 inline-flex items-center justify-center rounded-full bg-paper px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-charcoal hover:text-paper"
+          className="mt-8 inline-flex items-center justify-center rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-ink"
         >
           Nous contacter
         </Link>

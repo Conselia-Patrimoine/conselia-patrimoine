@@ -13,7 +13,10 @@ import { hero } from "@/content/home";
  */
 export default function Hero() {
   return (
-    <section className="relative -mt-20 flex min-h-screen items-end overflow-hidden">
+    <section
+      className="relative -mt-20 flex min-h-screen items-end overflow-hidden"
+      style={{ clipPath: "polygon(0 0, 100% 0, 100% 90%, 0 100%)" }}
+    >
       <ParallaxLayer>
         <Image
           src="/images/hero.avif"

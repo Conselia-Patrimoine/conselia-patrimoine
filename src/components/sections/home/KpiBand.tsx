@@ -34,7 +34,7 @@ export default function KpiBand() {
       <Container className="px-0">
         <RevealOnScroll>
           <dl
-            className={`glass-gold grid grid-cols-1 divide-y divide-stone-40 rounded-2xl border border-stone-40 shadow-xl shadow-ink/5 backdrop-blur-md sm:divide-x sm:divide-y-0 ${gridCols}`}
+            className={`glass-gold-solid grid grid-cols-1 divide-y divide-stone-40 rounded-2xl border border-stone-40 shadow-xl shadow-ink/5 sm:divide-x sm:divide-y-0 ${gridCols}`}
           >
             {displayedKpis.map((kpi, i) => (
               <div key={i} className="flex flex-col items-center gap-1 px-6 py-8 text-center">

@@ -93,6 +93,13 @@ h3 {
   background-color: rgba(247, 241, 226, 0.62);
 }
 
+/* Même teinte que .glass-gold, mais opaque à 100% — pour la plaque KPI une
+   fois révélée (le fondu d'apparition reste porté par .reveal-on-scroll,
+   pas par la couleur de fond elle-même). */
+.glass-gold-solid {
+  background-color: rgb(247, 241, 226);
+}
+
 /* CTA doré : dégradé + léger déplacement au survol (cf. proposition validée). */
 .btn-gold {
   background-image: var(--gold-foil-gradient);

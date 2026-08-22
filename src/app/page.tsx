@@ -12,8 +12,8 @@ export default function HomePage() {
     <>
       <Hero />
       <KpiBand />
-      <ExpertiseGrid />
       <QuoteBanner />
+      <ExpertiseGrid />
       <Testimonials />
       <CtaContact title={ctaContact.title} />
     </>

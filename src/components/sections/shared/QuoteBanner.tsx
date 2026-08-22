@@ -1,4 +1,4 @@
-import Section from "@/components/ui/Section";
+import Container from "@/components/ui/Container";
 import { quoteBanner } from "@/content/qui-sommes-nous";
 
 /**
@@ -6,14 +6,19 @@ import { quoteBanner } from "@/content/qui-sommes-nous";
  * Réutilisé sur l'Accueil : c'est la pièce de contenu la plus distinctive
  * du site, elle ancre la page dans l'identité du cabinet plutôt que dans
  * un discours finance générique.
+ *
+ * Fond doré en dégradé (gold-foil) — jamais un aplat uni, cf. charte
+ * graphique section 14, même pour ce moment volontairement doré.
  */
 export default function QuoteBanner() {
   return (
-    <Section tone="dark" className="text-center">
-      <blockquote className="mx-auto max-w-2xl font-display text-xl italic sm:text-2xl">
-        &ldquo;{quoteBanner.text}&rdquo;
-      </blockquote>
-      <p className="mt-6 text-sm text-gold-2">{quoteBanner.author}</p>
-    </Section>
+    <section className="gold-foil py-16 text-center sm:py-24">
+      <Container>
+        <blockquote className="mx-auto max-w-2xl font-display text-xl italic text-ink sm:text-2xl">
+          &ldquo;{quoteBanner.text}&rdquo;
+        </blockquote>
+        <p className="mt-6 text-sm font-medium text-ink-soft">{quoteBanner.author}</p>
+      </Container>
+    </section>
   );
 }

@@ -13,7 +13,7 @@ export default function ObjectivesHero() {
     <section className="relative -mt-20 flex h-[60vh] min-h-[420px] items-end overflow-hidden">
       <ParallaxLayer>
         <Image
-          src="/images/objectifs.png"
+          src="/images/objectifs.jpg"
           alt=""
           fill
           priority

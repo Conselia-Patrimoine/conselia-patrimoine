@@ -1,29 +1,52 @@
 import type { ReactNode } from "react";
-import { Phone, Mail, MapPin, type LucideIcon } from "lucide-react";
+import { Phone, Mail, MapPin, User, type LucideIcon } from "lucide-react";
 import { siteConfig } from "@/content/site";
+import { teamMembers } from "@/content/a-propos";
+
+// Noms complets (teamMembers ne stocke que le prénom) — même correspondance
+// que le footer.
+const teamContacts = [
+  { name: "Marine Henry", firstName: "Marine" },
+  { name: "Lionel Touchet", firstName: "Lionel" },
+]
+  .map(({ name, firstName }) => ({
+    name,
+    ...teamMembers.find((member) => member.firstName === firstName),
+  }))
+  .filter((person) => person.phone || person.email);
 
 /**
- * Coordonnées du cabinet — téléphone, e-mail, adresse (cf. CLAUDE.md
- * section 10). Carte grise (bg-mist) pour équilibrer visuellement la carte
- * du formulaire à côté — même vocabulaire que les autres cartes du site
- * (icône dans un cercle ton sur ton).
+ * Coordonnées du cabinet — téléphone/e-mail de chaque associé, adresse
+ * commune (cf. CLAUDE.md section 10). Carte grise (bg-mist) pour équilibrer
+ * visuellement la carte du formulaire à côté — même vocabulaire que les
+ * autres cartes du site (icône dans un cercle ton sur ton).
  */
 export default function ContactInfo() {
-  const { phone, email, address } = siteConfig.contact;
-  const telHref = `tel:${phone.replace(/\s+/g, "")}`;
+  const { address } = siteConfig.contact;
 
   return (
     <div className="space-y-6 rounded-2xl bg-mist p-8">
-      <InfoRow icon={Phone} label="Téléphone">
-        <a href={telHref} className="hover:text-gold-4">
-          {phone}
-        </a>
-      </InfoRow>
-      <InfoRow icon={Mail} label="E-mail">
-        <a href={`mailto:${email}`} className="hover:text-gold-4">
-          {email}
-        </a>
-      </InfoRow>
+      {teamContacts.map((person) => (
+        <InfoRow key={person.name} icon={User} label={person.name}>
+          <div className="space-y-1">
+            {person.phone && (
+              <a
+                href={`tel:${person.phone.replace(/\s+/g, "")}`}
+                className="flex items-center gap-2 hover:text-gold-4"
+              >
+                <Phone className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden="true" />
+                {person.phone}
+              </a>
+            )}
+            {person.email && (
+              <a href={`mailto:${person.email}`} className="flex items-center gap-2 hover:text-gold-4">
+                <Mail className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden="true" />
+                {person.email}
+              </a>
+            )}
+          </div>
+        </InfoRow>
+      ))}
       <InfoRow icon={MapPin} label="Adresse">
         <address className="not-italic">
           {address.line1}

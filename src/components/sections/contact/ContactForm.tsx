@@ -15,7 +15,11 @@ export default function ContactForm() {
     event.preventDefault();
     setStatus("loading");
 
-    const formData = new FormData(event.currentTarget);
+    // Capturé avant le await : `event.currentTarget` redevient null dès que
+    // le gestionnaire synchrone se termine (comportement React, pas lié au
+    // pooling), donc inutilisable après un `await` plus loin.
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
 
     try {
@@ -27,7 +31,7 @@ export default function ContactForm() {
 
       if (!res.ok) throw new Error("request failed");
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch {
       setStatus("error");
     }

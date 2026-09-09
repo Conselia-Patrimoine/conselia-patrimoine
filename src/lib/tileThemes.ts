@@ -11,8 +11,8 @@
 export const tileThemes = [
   { bg: "bg-ink", text: "text-paper", muted: "text-paper/70", icon: "text-gold-2" },
   { bg: "bg-mist", text: "text-ink", muted: "text-ink-soft", icon: "text-gold-4" },
-  { bg: "bg-charcoal", text: "text-paper", muted: "text-paper/70", icon: "text-gold-1" },
-  { bg: "bg-gold-1", text: "text-ink", muted: "text-ink-soft", icon: "text-charcoal" },
-  { bg: "bg-gold-5", text: "text-paper", muted: "text-paper/70", icon: "text-gold-1" },
+  { bg: "bg-charcoal", text: "text-paper", muted: "text-paper/70", icon: "text-gold-2" },
+  { bg: "bg-gold-2", text: "text-ink", muted: "text-ink-soft", icon: "text-charcoal" },
+  { bg: "bg-gold-5", text: "text-paper", muted: "text-paper/70", icon: "text-gold-2" },
   { bg: "bg-stone-40", text: "text-ink", muted: "text-ink-soft", icon: "text-gold-4" },
 ] as const;

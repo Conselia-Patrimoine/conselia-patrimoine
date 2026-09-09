@@ -16,7 +16,7 @@ const gridColsByCount: Record<number, string> = {
 };
 
 // Sélection dédiée (plutôt qu'un simple tileThemes[i]) pour garantir qu'au
-// moins une tuile soit dorée (gold-1) — les 3 premiers thèmes du patchwork
+// moins une tuile soit dorée (gold-2) — les 3 premiers thèmes du patchwork
 // partagé n'en contiennent pas.
 const kpiThemeIndexes = [0, 3, 2];
 

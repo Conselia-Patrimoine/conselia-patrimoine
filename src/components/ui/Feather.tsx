@@ -20,9 +20,8 @@ export default function Feather({ className = "h-8 w-8", fill = "gold" }: Feathe
     >
       <defs>
         <linearGradient id="feather-gold" x1="18" y1="2" x2="46" y2="58" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#F0D8A0" />
-          <stop offset="30%" stopColor="#D9A860" />
-          <stop offset="60%" stopColor="#BD8A2E" />
+          <stop offset="0%" stopColor="#D9A860" />
+          <stop offset="45%" stopColor="#BD8A2E" />
           <stop offset="100%" stopColor="#8A5F1E" />
         </linearGradient>
       </defs>
@@ -33,14 +32,14 @@ export default function Feather({ className = "h-8 w-8", fill = "gold" }: Feathe
       {/* Hampe : dépasse volontairement du vexille, comme une plume d'oie taillée en bec de plume */}
       <path
         d="M35 3C32 18 29 34 26 48C24 54 21 58 18 62"
-        stroke={fill === "gold" ? "#2A2823" : "#F0D8A0"}
+        stroke={fill === "gold" ? "#2A2823" : "#D9A860"}
         strokeWidth="2.1"
         strokeLinecap="round"
         opacity="0.85"
       />
       <path
         d="M33 16L42 20M33 26L41 31"
-        stroke={fill === "gold" ? "#2A2823" : "#F0D8A0"}
+        stroke={fill === "gold" ? "#2A2823" : "#D9A860"}
         strokeWidth="1"
         strokeLinecap="round"
         opacity="0.4"

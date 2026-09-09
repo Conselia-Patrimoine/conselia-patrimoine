@@ -7,23 +7,18 @@ import { chapo } from "@/content/notre-approche";
  * Hero de la page "Notre approche" — même traitement que les autres pages
  * secondaires (À propos, Notre expertise) : photo en niveaux de gris + dégradé
  * de marque + parallax, hauteur réduite (page secondaire, pas 100vh).
- *
- * Réutilise la photo du hero Accueil (signature d'un document) : aucun
- * visuel dédié fourni pour cette page (cf. CLAUDE.md section 4), et le
- * sujet — rendez-vous, diagnostic, mise en œuvre — illustre bien la
- * méthode décrite ci-dessous.
  */
 export default function ApproachHero() {
   return (
     <section className="relative -mt-20 flex h-[60vh] min-h-[420px] items-end overflow-hidden">
       <ParallaxLayer>
         <Image
-          src="/images/hero.png"
+          src="/images/approche.jpg"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover grayscale"
+          className="object-cover object-[center_5%] grayscale"
         />
       </ParallaxLayer>
       <div

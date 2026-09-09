@@ -45,9 +45,12 @@ export const siteConfig = {
     },
     autoritesControle: ["AMF", "ACPR", "ORIAS"],
     cnil: "Déclaration CNIL n°2003574 v0 du 28/11/2016",
+    // Hébergement Vercel (le nom de domaine reste chez IONOS, en registrar
+    // uniquement) — adresse à reconfirmer sur vercel.com/legal avant mise en
+    // ligne, susceptible de changer.
     hebergeur: {
-      nom: "1&1 IONOS SARL",
-      adresse: "7 place de la Gare, BP 70109, 57201 Sarreguemines Cedex",
+      nom: "Vercel Inc.",
+      adresse: "340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis",
     },
   },
 } as const;

@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <Hero />
       <ExpertiseGrid />
-      <QuoteBanner />
+      <QuoteBanner compact />
       <KpiBand />
       <PhotoBanner />
       <Testimonials />

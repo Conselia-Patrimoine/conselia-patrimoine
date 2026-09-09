@@ -3,6 +3,9 @@ import Container from "@/components/ui/Container";
 import Feather from "@/components/ui/Feather";
 import { legalNav } from "@/content/navigation";
 import { siteConfig } from "@/content/site";
+import { teamMembers } from "@/content/a-propos";
+
+const lionel = teamMembers.find((member) => member.firstName === "Lionel");
 
 /** Pied de page : identité, coordonnées, liens légaux, LinkedIn (cf. CLAUDE.md section 15). */
 export default function Footer() {
@@ -27,9 +30,18 @@ export default function Footer() {
             Contact
           </p>
           <ul className="mt-3 space-y-1 text-sm text-paper/70">
+            <li className="text-paper/50">Marine Henry</li>
             <li>{siteConfig.contact.phone}</li>
             <li>{siteConfig.contact.email}</li>
           </ul>
+
+          {lionel?.phone && lionel?.email && (
+            <ul className="mt-4 space-y-1 text-sm text-paper/70">
+              <li className="text-paper/50">Lionel Touchet</li>
+              <li>{lionel.phone}</li>
+              <li>{lionel.email}</li>
+            </ul>
+          )}
         </div>
 
         <div>

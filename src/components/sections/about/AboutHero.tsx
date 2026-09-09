@@ -34,7 +34,7 @@ export default function AboutHero() {
           <span className="text-sm font-semibold uppercase tracking-widest text-gold-2">
             Le cabinet
           </span>
-          <h1 className="text-3xl text-paper sm:text-4xl">À propos</h1>
+          <h1 className="text-3xl text-paper sm:text-4xl">Qui sommes-nous</h1>
           <p className="text-lg text-paper/85">{sharedParagraph}</p>
         </div>
       </Container>

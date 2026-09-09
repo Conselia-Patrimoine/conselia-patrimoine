@@ -9,6 +9,12 @@ export type ProcessStep = {
   description: string;
 };
 
+export type CabinetValue = {
+  title: string;
+  description: string;
+  icon: "expertise" | "proximite" | "sur-mesure" | "rigueur" | "innovation";
+};
+
 export const chapo =
   "Une gestion de patrimoine efficace ne se limite pas au conseil produit. Nous construisons une relation de confiance durable, fondée sur une méthode structurée en plusieurs étapes.";
 
@@ -36,6 +42,39 @@ export const processSteps: ProcessStep[] = [
     title: "Suivi et ajustement dans le temps",
     description:
       "Votre situation évolue, votre stratégie doit s'adapter. Nous assurons un accompagnement régulier et ajustons nos recommandations au fil du temps.",
+  },
+];
+
+export const cabinetValues: CabinetValue[] = [
+  {
+    title: "Expertise",
+    description:
+      "Une maîtrise technique actualisée en continu, au service de décisions patrimoniales éclairées.",
+    icon: "expertise",
+  },
+  {
+    title: "Proximité",
+    description:
+      "Une relation de confiance durable, à l'écoute de votre situation et de vos priorités.",
+    icon: "proximite",
+  },
+  {
+    title: "Sur-mesure",
+    description:
+      "Des recommandations construites pour votre situation, jamais des solutions standardisées.",
+    icon: "sur-mesure",
+  },
+  {
+    title: "Rigueur",
+    description:
+      "Une sélection exigeante des partenaires et des solutions, dans votre seul intérêt.",
+    icon: "rigueur",
+  },
+  {
+    title: "Innovation",
+    description:
+      "Une veille constante sur les dispositifs du marché pour vous faire bénéficier des meilleures options.",
+    icon: "innovation",
   },
 ];
 

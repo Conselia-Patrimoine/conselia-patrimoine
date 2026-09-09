@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
-import Feather from "@/components/ui/Feather";
 import MobileNav from "@/components/layout/MobileNav";
 import { mainNav } from "@/content/navigation";
 import { siteConfig } from "@/content/site";
@@ -15,11 +15,15 @@ export default function Header() {
   return (
     <header className="glass-gold fixed inset-x-0 top-0 z-50 border-b border-stone-40/60 backdrop-blur-md">
       <Container className="flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5">
-          <Feather className="h-8 w-8" />
-          <span className="font-display text-lg font-medium tracking-tight">
-            {siteConfig.name}
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.png"
+            alt={siteConfig.name}
+            width={359}
+            height={146}
+            priority
+            className="h-[46px] w-[113px] sm:h-[55px] sm:w-[136px]"
+          />
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">

@@ -37,7 +37,7 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const sharedParagraph =
-  "Conselia Patrimoine, c'est Marine Henry et Lionel Touchet. Si nos parcours diffèrent, nous partageons la même exigence d'accompagnement : ensemble, nous allions expertise technique et écoute pour construire des solutions patrimoniales adaptées à chaque situation de nos clients.";
+  "Conselia Patrimoine réunit Marine Henry et Lionel Touchet. Nos parcours se complètent, mais notre exigence d'accompagnement est commune : nous conjuguons expertise technique et écoute attentive pour construire des solutions patrimoniales sur mesure, adaptées à la situation de chacun de nos clients.";
 
 export const quoteBanner = {
   text: "La plume symbolise l'écrit, instrument essentiel de transmission et de conservation de l'information. En droit, l'écrit constitue une preuve parfaite, non soumise à l'appréciation du juge. Comme le veut l'expression, les paroles s'envolent, les écrits restent.",

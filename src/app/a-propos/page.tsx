@@ -2,6 +2,7 @@ import Section from "@/components/ui/Section";
 import AboutHero from "@/components/sections/about/AboutHero";
 import TeamMember from "@/components/sections/about/TeamMember";
 import QuoteBanner from "@/components/sections/shared/QuoteBanner";
+import ValuesGrid from "@/components/sections/approach/ValuesGrid";
 import { teamMembers } from "@/content/a-propos";
 
 // Page "À propos" (nommée "Qui sommes-nous" dans le brief d'origine,
@@ -20,6 +21,8 @@ export default function AProposPage() {
       </Section>
 
       <QuoteBanner />
+
+      <ValuesGrid />
     </>
   );
 }

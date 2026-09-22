@@ -12,7 +12,7 @@ export default function AProposPage() {
       <AboutHero />
 
       <Section>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mx-auto flex max-w-3xl flex-col gap-6">
           {teamMembers.map((member, i) => (
             <TeamMember key={member.firstName} {...member} reversed={i % 2 === 1} />
           ))}
